@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Triple Bean Cafe · Menu</title>
+  <meta name="description" content="House beverage menu for Triple Bean Cafe." />
+  <link rel="icon" href="images/favicon.svg">
+  <link rel="preload" href="images/logo.svg" as="image" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img class="logo" src="images/logo.svg" alt="Triple Bean Cafe logo">
+        <h1>Triple Bean Cafe</h1>
+      </div>
+      <p class="tagline">Caffeine is life~</p>
+    </header>
+
+    <main class="menu" aria-label="Menu">
+      <h2>Beverages</h2>
+      <p class="note">Ice available upon request • No decaf</p>
+      <div class="divider" role="separator" aria-hidden="true"></div>
+
+      <div class="sections">
+        <!-- Coffee -->
+        <section class="section" aria-labelledby="coffee-title">
+          <h3 id="coffee-title">Coffee</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <span class="icon"><img src="images/black.svg" alt="" width="32" height="32"></span>
+              <div>
+                <div class="name">Black</div>
+                <div class="badges"><span class="badge">Ice</span><span class="badge">Hot</span></div>
+              </div>
+            </li>
+            <li class="menu-item">
+              <span class="icon"><img src="images/white.svg" alt="" width="32" height="32"></span>
+              <div>
+                <div class="name">White</div>
+                <div class="badges"><span class="badge">Ice</span><span class="badge">Hot</span></div>
+              </div>
+            </li>
+            <li class="menu-item">
+              <span class="icon"><img src="images/aerocano.svg" alt="" width="32" height="32"></span>
+              <div>
+                <div class="name">Iced Aerocano</div>
+                <div class="badges"><span class="badge">Aerated espresso on ice</span></div>
+              </div>
+            </li>
+            <li class="menu-item">
+              <span class="icon"><img src="images/affogato.svg" alt="" width="32" height="32"></span>
+              <div>
+                <div class="name">Affogato</div>
+                <div class="badges"><span class="badge">Espresso</span><span class="badge">Vanilla ice cream</span></div>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Tea -->
+        <section class="section" aria-labelledby="tea-title">
+          <h3 id="tea-title">Tea</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <span class="icon"><img src="images/matcha.svg" alt="" width="32" height="32"></span>
+              <div>
+                <div class="name">Matcha Latte</div>
+                <div class="badges"><span class="badge">Ice</span><span class="badge">Hot</span></div>
+              </div>
+            </li>
+            <li class="menu-item">
+              <span class="icon"><img src="images/strawberry-matcha.svg" alt="" width="32" height="32"></span>
+              <div>
+                <div class="name">Iced Strawberry Matcha Latte</div>
+                <div class="badges"><span class="badge">Matcha</span><span class="badge">Strawberry milk</span></div>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Misc -->
+        <section class="section" aria-labelledby="misc-title">
+          <h3 id="misc-title">Misc</h3>
+          <ul class="menu-list">
+            <li class="menu-item">
+              <span class="icon"><img src="images/fridge.svg" alt="" width="32" height="32"></span>
+              <div>
+                <div class="name">Assorted Drinks in Fridge</div>
+                <div class="badges"><span class="badge">Sodas</span><span class="badge">Sparkling water</span><span class="badge">Juice</span></div>
+              </div>
+            </li>
+            <li class="menu-item">
+              <span class="icon"><img src="images/gin-tonic.svg" alt="" width="32" height="32"></span>
+              <div>
+                <div class="name">Gin &amp; Tonic</div>
+                <div class="badges"><span class="badge">Roku Gin</span><span class="badge">Tonic</span><span class="badge">Ice</span></div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="divider" role="separator" aria-hidden="true"></div>
+      <footer>© <span id="year"></span> Triple Bean Cafe · Handmade at home</footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

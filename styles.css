@@ -1,0 +1,192 @@
+/* Triple Bean Cafe - Warm Walnut Theme (no dark/light switching) */
+:root {
+  /* Palette inspired by warm beige + walnut */
+  --bg: #f5efe7;            /* warm beige background */
+  --paper: #fffaf3;         /* parchment card */
+  --walnut: #5b4636;        /* deep walnut text */
+  --walnut-2: #7a5b46;      /* accent walnut */
+  --beige-ink: #6d5a49;     /* secondary text */
+  --line: #e6dccf;          /* soft divider */
+  --accent: #c6a27a;        /* caramel accent */
+  --accent-2: #9c6b3f;      /* deeper caramel */
+  --shadow: 0 10px 30px rgba(91, 70, 54, 0.12);
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background:
+    radial-gradient(900px 600px at 10% -10%, rgba(198,162,122,0.12), transparent 60%),
+    radial-gradient(900px 600px at 110% 110%, rgba(156,107,63,0.12), transparent 60%),
+    var(--bg);
+  color: var(--walnut);
+  font: 18px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  min-height: 100%;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+  display: grid;
+  align-content: center;
+  min-height: 100dvh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.brand {
+  display: inline-flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 14px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.4));
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.brand .logo {
+  width: 56px; height: 56px;
+  filter: drop-shadow(0 6px 14px rgba(91,70,54,.15));
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 800;
+  letter-spacing: .3px;
+  background: linear-gradient(45deg, var(--walnut-2), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tagline {
+  margin-top: 10px;
+  color: var(--beige-ink);
+  font-size: 14px;
+}
+
+.menu {
+  margin-top: 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: 22px;
+  padding: clamp(16px, 4vw, 32px);
+}
+
+.menu h2 {
+  text-align: center;
+  margin: 0 0 12px;
+  font-size: clamp(22px, 4.2vw, 30px);
+  letter-spacing: .3px;
+}
+
+.menu .note {
+  text-align: center;
+  font-size: 14px;
+  color: var(--beige-ink);
+  margin: 0 0 6px;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line), transparent);
+  margin: 16px auto 10px;
+  width: 90%;
+}
+
+.sections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+@media (min-width: 680px) {
+  .sections {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+}
+
+.section {
+  background: linear-gradient(180deg, #fffdf8, #fffaf3);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.section h3 {
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: clamp(18px, 2.8vw, 22px);
+  color: var(--walnut-2);
+}
+
+ul.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--line);
+  box-shadow: 0 8px 24px rgba(91,70,54,.08);
+}
+
+.menu-item .icon {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(198,162,122,.2), rgba(156,107,63,.15));
+  border: 1px solid var(--line);
+}
+
+.menu-item .name {
+  font-size: clamp(18px, 3.6vw, 22px);
+  font-weight: 700;
+}
+
+.badges {
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.badge {
+  font-size: 12px;
+  color: var(--beige-ink);
+  border: 1px dashed var(--line);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+footer {
+  text-align: center;
+  color: var(--beige-ink);
+  font-size: 13px;
+  margin-top: 18px;
+}

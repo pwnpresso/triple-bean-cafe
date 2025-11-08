@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="milk" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e9eef5"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="18" fill="#0f131a"/>
+  <g transform="translate(18,24)">
+    <rect x="0" y="30" width="70" height="50" rx="10" fill="url(#milk)" stroke="#ccd2da" />
+    <rect x="55" y="40" width="26" height="24" rx="10" fill="#e9eef5" />
+    <ellipse cx="35" cy="28" rx="26" ry="6" fill="#f6f9ff"/>
+    <path d="M25 44 q10 8 20 0" stroke="#c79c62" stroke-width="3" fill="none" />
+  </g>
+</svg>
