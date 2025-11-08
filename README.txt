@@ -1,24 +1,8 @@
-Triple Bean Cafe — Static Site
-==============================
+Triple Bean Café
 
-Files
------
-- index.html — main page
-- styles.css — site styling
-- images/ — inline SVG artwork (logo, icons, hero, favicon)
+☕🌿 Welcome to Triple Bean Café — a cosy corner for coffee, calm, and conversation.
 
-How to run
-----------
-Just open index.html in a browser. For local network hosting, any static server will do, e.g.:
+We brew with care, take pride in slow mornings, and believe good coffee should feel like a small luxury.
 
-Python (built-in):
-    cd triple-bean-cafe
-    python -m http.server 8000
-
-Then visit http://<your-lan-ip>:8000
-
-Notes
------
-- All graphics are vector SVGs for crisp display.
-- The theme adapts to light/dark based on system preference.
-- Edit colors in :root within styles.css if you want a different palette.
+✨ Sit. Stay. Sip.
+Your seat is always waiting.
