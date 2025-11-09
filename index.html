@@ -16,7 +16,7 @@
         <img class="logo" src="images/logo.svg" alt="Triple Bean Cafe logo">
         <h1>Triple Bean Cafe</h1>
       </div>
-      <p class="tagline">Caffeine is life~</p>
+      <p class="tagline">A cozy home bar in warm beige &amp; walnut.</p>
     </header>
 
     <main class="menu" aria-label="Menu">
@@ -24,91 +24,132 @@
       <p class="note">Ice available upon request • No decaf</p>
       <div class="divider" role="separator" aria-hidden="true"></div>
 
-      <div class="sections">
-        <!-- Coffee -->
+      <div class="sections" id="menuSections">
         <section class="section" aria-labelledby="coffee-title">
           <h3 id="coffee-title">Coffee</h3>
           <ul class="menu-list">
-            <li class="menu-item">
-              <span class="icon"><img src="images/black.svg" alt="" width="32" height="32"></span>
-              <div>
-                <div class="name">Black</div>
-                <div class="badges"><span class="badge">Ice</span><span class="badge">Hot</span></div>
-              </div>
+            <li class="card orderable" data-item="Black">
+              <div class="icon"><img src="images/black.svg" alt="" width="32" height="32"></div>
+              <div><div class="name">Black</div><div class="meta">Tap to add • Hot or Ice</div></div>
+              <div class="qty" data-qty="Black"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
             </li>
-            <li class="menu-item">
-              <span class="icon"><img src="images/white.svg" alt="" width="32" height="32"></span>
-              <div>
-                <div class="name">White</div>
-                <div class="badges"><span class="badge">Ice</span><span class="badge">Hot</span></div>
-              </div>
+            <li class="card orderable" data-item="White">
+              <div class="icon"><img src="images/white.svg" alt="" width="32" height="32"></div>
+              <div><div class="name">White</div><div class="meta">Tap to add • Hot or Ice</div></div>
+              <div class="qty" data-qty="White"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
             </li>
-            <li class="menu-item">
-              <span class="icon"><img src="images/aerocano.svg" alt="" width="32" height="32"></span>
-              <div>
-                <div class="name">Iced Aerocano</div>
-                <div class="badges"><span class="badge">Aerated espresso on ice</span></div>
-              </div>
+            <li class="card orderable" data-item="Iced Aerocano">
+              <div class="icon"><img src="images/aerocano.svg" alt="" width="32" height="32"></div>
+              <div><div class="name">Iced Aerocano</div><div class="meta">Tap to add • Aerated espresso on ice</div></div>
+              <div class="qty" data-qty="Iced Aerocano"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
             </li>
-            <li class="menu-item">
-              <span class="icon"><img src="images/affogato.svg" alt="" width="32" height="32"></span>
-              <div>
-                <div class="name">Affogato</div>
-                <div class="badges"><span class="badge">Espresso</span><span class="badge">Vanilla ice cream</span></div>
-              </div>
+            <li class="card orderable" data-item="Affogato">
+              <div class="icon"><img src="images/affogato.svg" alt="" width="32" height="32"></div>
+              <div><div class="name">Affogato</div><div class="meta">Tap to add • Espresso + vanilla ice cream</div></div>
+              <div class="qty" data-qty="Affogato"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
             </li>
           </ul>
         </section>
 
-        <!-- Tea -->
         <section class="section" aria-labelledby="tea-title">
           <h3 id="tea-title">Tea</h3>
           <ul class="menu-list">
-            <li class="menu-item">
-              <span class="icon"><img src="images/matcha.svg" alt="" width="32" height="32"></span>
-              <div>
-                <div class="name">Matcha Latte</div>
-                <div class="badges"><span class="badge">Ice</span><span class="badge">Hot</span></div>
-              </div>
+            <li class="card orderable" data-item="Matcha Latte">
+              <div class="icon"><img src="images/matcha.svg" alt="" width="32" height="32"></div>
+              <div><div class="name">Matcha Latte</div><div class="meta">Tap to add • Hot or Ice</div></div>
+              <div class="qty" data-qty="Matcha Latte"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
             </li>
-            <li class="menu-item">
-              <span class="icon"><img src="images/strawberry-matcha.svg" alt="" width="32" height="32"></span>
-              <div>
-                <div class="name">Iced Strawberry Matcha Latte</div>
-                <div class="badges"><span class="badge">Matcha</span><span class="badge">Strawberry puree</span></div>
-              </div>
+            <li class="card orderable" data-item="Iced Strawberry Matcha Latte">
+              <div class="icon"><img src="images/strawberry-matcha.svg" alt="" width="32" height="32"></div>
+              <div><div class="name">Iced Strawberry Matcha Latte</div><div class="meta">Tap to add • Matcha + strawberry milk</div></div>
+              <div class="qty" data-qty="Iced Strawberry Matcha Latte"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
             </li>
           </ul>
         </section>
 
-        <!-- Misc -->
         <section class="section" aria-labelledby="misc-title">
           <h3 id="misc-title">Misc</h3>
           <ul class="menu-list">
-            <li class="menu-item">
-              <span class="icon"><img src="images/fridge.svg" alt="" width="32" height="32"></span>
-              <div>
-                <div class="name">Assorted Drinks in Fridge</div>
-                <div class="badges"><span class="badge">Sodas</span><span class="badge">Sparkling water</span><span class="badge">Juice</span></div>
-              </div>
+            <li class="card">
+              <div class="icon"><img src="images/fridge.svg" alt="" width="32" height="32"></div>
+              <div><div class="name">Assorted Drinks in Fridge</div><div class="meta">Self-serve — help yourself from the fridge</div></div>
             </li>
-            <li class="menu-item">
-              <span class="icon"><img src="images/gin-tonic.svg" alt="" width="32" height="32"></span>
-              <div>
-                <div class="name">Gin &amp; Tonic</div>
-                <div class="badges"><span class="badge">Roku Gin</span><span class="badge">Tonic</span><span class="badge">Ice</span></div>
-              </div>
+            <li class="card orderable" data-item="Gin & Tonic">
+              <div class="icon"><img src="images/gin-tonic.svg" alt="" width="32" height="32"></div>
+              <div><div class="name">Gin &amp; Tonic</div><div class="meta">Tap to add • Roku + tonic</div></div>
+              <div class="qty" data-qty="Gin & Tonic"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
             </li>
           </ul>
         </section>
       </div>
+
       <div class="divider" role="separator" aria-hidden="true"></div>
+
+      <div class="footer-bar">
+        <input id="guestName" class="input" placeholder="Your name (optional)">
+        <input id="note" class="input" placeholder="Note (optional): e.g., less ice / oat milk">
+        <button id="sendBtn" class="button">Send Order</button>
+        <div id="closedMsg" class="closed" style="display:none;">Ordering is currently closed.</div>
+      </div>
+      <div id="status" class="status"></div>
+
       <footer>© <span id="year"></span> Triple Bean Cafe · Handmade at home</footer>
     </main>
   </div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    const ORDER_ENDPOINT = "https://script.google.com/macros/s/AKfycbykR7MxOkPuKtz7Sa92HJG9W1qOecMrydAf7LPQBYL2wpA1ULcj97WAfcBWZW29CdmJ/exec";
+
+    const counts = {};
+    const cards = document.querySelectorAll('.card.orderable');
+    cards.forEach(card => {
+      const item = card.getAttribute('data-item');
+      counts[item] = 0;
+      card.addEventListener('click', (e)=>{ if(!e.target.closest('button')) inc(item); });
+      const qty = card.querySelector('.qty');
+      qty.querySelector('[data-action="inc"]').addEventListener('click', (e)=>{ e.stopPropagation(); inc(item); });
+      qty.querySelector('[data-action="dec"]').addEventListener('click', (e)=>{ e.stopPropagation(); dec(item); });
+    });
+    function render(item){ const el=document.querySelector('.qty[data-qty="'+item.replace(/"/g,'&quot;')+'"] .count'); if(el) el.textContent=counts[item]; }
+    function inc(item){ counts[item]=Math.min(99,(counts[item]||0)+1); render(item); }
+    function dec(item){ counts[item]=Math.max(0,(counts[item]||0)-1); render(item); }
+
+    const statusEl = document.getElementById('status');
+    const sendBtn = document.getElementById('sendBtn');
+    const closedMsg = document.getElementById('closedMsg');
+
+    async function checkOpen(){
+      try{
+        const res = await fetch(ORDER_ENDPOINT, { method:'GET', headers:{ 'Accept':'application/json' }});
+        const data = await res.json();
+        const open = !!(data && data.open);
+        sendBtn.disabled = !open;
+        closedMsg.style.display = open ? 'none' : '';
+      }catch{ /* ignore */ }
+    }
+    checkOpen();
+
+    sendBtn.addEventListener('click', async ()=>{
+      const items = Object.entries(counts).filter(([k,v])=>v>0).map(([name,qty])=>({name,qty}));
+      if(items.length===0){ statusEl.textContent="Add at least one item by tapping."; return; }
+      const payload = { from:(document.getElementById('guestName').value||'').trim(), note:(document.getElementById('note').value||'').trim(), items };
+      statusEl.textContent = "Sending…";
+      try{
+        const res = await fetch(ORDER_ENDPOINT, { method:'POST', headers:{ 'Content-Type':'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
+        const data = await res.json().catch(()=>({}));
+        if(data.ok){
+          statusEl.textContent = "Order sent! Check your email.";
+          Object.keys(counts).forEach(k=>{ counts[k]=0; render(k); });
+          document.getElementById('guestName').value=""; document.getElementById('note').value="";
+        } else if(data.error==="closed"){
+          statusEl.textContent = "Ordering is closed.";
+          sendBtn.disabled = true; closedMsg.style.display='';
+        } else {
+          statusEl.textContent = "Failed to send.";
+        }
+      }catch{ statusEl.textContent="Network error."; }
+    });
   </script>
 </body>
 </html>

@@ -1,22 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <defs>
-    <filter id="s" x="-50%" y="-50%" width="200%" height="200%">
-      <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="rgba(0,0,0,.35)"/>
-    </filter>
-  </defs>
-  <rect rx="14" ry="14" width="64" height="64" fill="#10131a"/>
-  
-<g filter="url(#s)">
-  <ellipse cx="18" cy="16" rx="10" ry="14" fill="#9be15d" opacity=".95"/>
-  <path d="M14 8c2 4-1 7 3 12" stroke="#000" stroke-opacity=".2" stroke-width="1.8" stroke-linecap="round"/>
-</g>
-<g filter="url(#s)" transform="translate(20,0)">
-  <ellipse cx="18" cy="16" rx="10" ry="14" fill="#00e3ae" opacity=".95"/>
-  <path d="M14 8c2 4-1 7 3 12" stroke="#000" stroke-opacity=".2" stroke-width="1.8" stroke-linecap="round"/>
-</g>
-<g filter="url(#s)" transform="translate(10,16)">
-  <ellipse cx="18" cy="16" rx="10" ry="14" fill="#ffd166" opacity=".95"/>
-  <path d="M14 8c2 4-1 7 3 12" stroke="#000" stroke-opacity=".2" stroke-width="1.8" stroke-linecap="round"/>
-</g>
-
+  <rect rx="14" ry="14" width="64" height="64" fill="#fff4e6"/>
+  <g>
+    <ellipse cx="18" cy="22" rx="10" ry="14" fill="#c6a27a" opacity=".95"/>
+    <path d="M14 14c2 4-1 7 3 12" stroke="#000" stroke-opacity=".2" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(20,0)">
+    <ellipse cx="18" cy="22" rx="10" ry="14" fill="#9c6b3f" opacity=".95"/>
+    <path d="M14 14c2 4-1 7 3 12" stroke="#000" stroke-opacity=".2" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(10,16)">
+    <ellipse cx="18" cy="22" rx="10" ry="14" fill="#e6c39a" opacity=".95"/>
+    <path d="M14 14c2 4-1 7 3 12" stroke="#000" stroke-opacity=".2" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
 </svg>
