@@ -1,4 +1,4 @@
-/* Triple Bean Cafe — Tap-to-Order (Beige/Walnut) */
+/* Triple Bean Cafe — Tap-to-Order (Beige/Walnut) with C1 emoji badges */
 :root{
   --bg:#f5efe7;
   --paper:#fffaf3;
@@ -36,7 +36,26 @@ ul.menu-list{list-style:none; margin:0; padding:0; display:grid; gap:10px}
 .card{display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:12px; padding:12px; border-radius:14px; border:1px solid var(--line); background:linear-gradient(180deg, #fffdf8, #fffaf3); transition:transform .12s ease, box-shadow .12s ease}
 .card.orderable{cursor:pointer}
 .card:hover{transform:translateY(-1px); box-shadow:0 8px 24px rgba(91,70,54,.08)}
-.icon{width:48px; height:48px; display:grid; place-items:center; border-radius:12px; background:linear-gradient(180deg, rgba(198,162,122,.2), rgba(156,107,63,.15)); border:1px solid var(--line)}
+.icon{
+  position:relative;
+  width:48px; height:48px;
+  display:grid; place-items:center;
+  border-radius:12px;
+  background:linear-gradient(180deg, rgba(198,162,122,.2), rgba(156,107,63,.15));
+  border:1px solid var(--line);
+}
+/* C1 badge: tiny emoji bubble on the top-right corner */
+.icon[data-badge]::after{
+  content: attr(data-badge);
+  position:absolute;
+  top:-6px; right:-6px;
+  width:20px; height:20px;
+  display:grid; place-items:center;
+  font-size:12px; line-height:1;
+  background:#fff; border:1px solid var(--line);
+  border-radius:999px;
+  box-shadow:0 4px 10px rgba(91,70,54,.15);
+}
 .name{font-size:clamp(18px,3.6vw,22px); font-weight:800}
 .meta{color:var(--ink); font-size:12px}
 .qty{display:inline-flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:999px; padding:4px 8px; background:#fffdf8}
