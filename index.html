@@ -9,28 +9,37 @@
   <link rel="icon" href="images/favicon.svg">
   <link rel="preload" href="images/logo.svg" as="image" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/framer-motion@10/dist/framer-motion.js"></script>
 </head>
-<body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <img class="logo" src="images/logo.svg" alt="Triple Bean Cafe logo">
-        <h1>Triple Bean Cafe</h1>
+<body class="loading">
+  
+  <!-- Loading screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-logo">
+      <img src="images/logo.svg" alt="Triple Bean Cafe">
+    </div>
+    <div class="loading-text">Triple Bean Cafe</div>
+  </div>
+
+  <div class="container" id="mainContainer">
+    <header id="header">
+      <div class="brand" id="brand">
+        <img class="logo floating-logo" src="images/logo.svg" alt="Triple Bean Cafe logo" id="mainLogo">
+        <h1 id="brandTitle">Triple Bean Cafe</h1>
       </div>
-      <p class="tagline">
-        ☕🌿 Welcome to Triple Bean Café — a cosy corner for coffee, calm, and conversation.<br><br>
-        We brew with care, take pride in slow mornings, and believe good coffee should feel like a small luxury.<br><br>
-        ✨ Sit. Stay. Sip.<br>
-        Your seat is always waiting.
+      <p class="tagline" id="tagline">
+        <span class="tagline-line">☕🌿 Welcome to Triple Bean Café — a cosy corner for coffee, calm, and conversation.</span><br><br>
+        <span class="tagline-line">We brew with care, take pride in slow mornings, and believe good coffee should feel like a small luxury.</span><br><br>
+        <span class="tagline-line">✨ Sit. Stay. Sip.<br>Your seat is always waiting.</span>
       </p>
     </header>
 
-    <main class="menu" aria-label="Menu">
-      <div class="menu-header">
-        <h2>Beverages</h2>
-        <p class="note">Ice available upon request • No decaf</p>
+    <main class="menu" aria-label="Menu" id="menu">
+      <div class="menu-header" id="menuHeader">
+        <h2 id="menuTitle">Beverages</h2>
+        <p class="note" id="menuNote">Ice available upon request • No decaf</p>
       </div>
-      <div class="divider" role="separator" aria-hidden="true"></div>
+      <div class="divider animate-divider" role="separator" aria-hidden="true" id="divider1"></div>
 
       <div class="sections" id="menuSections">
         <!-- Coffee -->
@@ -133,6 +142,207 @@
     // >>> REPLACE with your current /exec URL (keep it exactly as in your working version)
     const ORDER_ENDPOINT = "https://script.google.com/macros/s/AKfycbykR7MxOkPuKtz7Sa92HJG9W1qOecMrydAf7LPQBYL2wpA1ULcj97WAfcBWZW29CdmJ/exec";
 
+    // Animation Framework
+    const { motion, animate, stagger } = Motion;
+
+    // Premium Entrance Animation Sequence
+    async function initPageAnimations() {
+      const loadingScreen = document.getElementById('loadingScreen');
+      const mainContainer = document.getElementById('mainContainer');
+      
+      // Wait for content to load
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Hide loading screen with elegant transition
+      loadingScreen.classList.add('fade-out');
+      document.body.classList.remove('loading');
+      
+      // Show main container
+      mainContainer.style.opacity = '1';
+      
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, 800);
+
+      // Check if Motion is available, if not just show content
+      if (typeof Motion === 'undefined' || !Motion.animate) {
+        console.log('Motion not available, showing content directly');
+        // Ensure everything is visible if animations can't run
+        const elements = document.querySelectorAll('#brand, #brandTitle, .tagline-line, .card, .menu, .section');
+        elements.forEach(el => el.style.opacity = '1');
+        return;
+      }
+
+      // Add animation-ready class for elements that should animate
+      document.body.classList.add('animate-ready');
+
+      // Animate main content entrance
+      setTimeout(async () => {
+        try {
+          // Header animation sequence
+          await animate('#brand', 
+            { opacity: [0, 1], y: [-30, 0], scale: [0.8, 1] },
+            { duration: 0.8, ease: [0.68, -0.55, 0.265, 1.55] }
+          );
+
+        await animate('#brandTitle', 
+          { opacity: [0, 1], x: [-20, 0] },
+          { duration: 0.6, delay: 0.2 }
+        );
+
+        // Tagline staggered animation
+        const taglineLines = document.querySelectorAll('.tagline-line');
+        await animate(taglineLines, 
+          { opacity: [0, 1], y: [20, 0] },
+          { duration: 0.5, delay: stagger(0.2) }
+        );
+
+        // Menu entrance
+        await animate('#menu', 
+          { opacity: [0, 1], y: [40, 0], scale: [0.95, 1] },
+          { duration: 0.8, delay: 0.3 }
+        );
+
+        // Menu sections staggered entrance
+        const sections = document.querySelectorAll('.section');
+        await animate(sections, 
+          { opacity: [0, 1], y: [30, 0], rotateX: [10, 0] },
+          { duration: 0.6, delay: stagger(0.15) }
+        );
+
+          // Cards individual animation
+          const cards = document.querySelectorAll('.card');
+          animate(cards, 
+            { opacity: [0, 1], x: [-20, 0] },
+            { duration: 0.4, delay: stagger(0.05) }
+          );
+        } catch (error) {
+          console.log('Animation error:', error);
+        }
+      }, 500);
+    }
+
+    // Enhanced Interaction Animations
+    function setupInteractionAnimations() {
+      // Card hover enhancements
+      const orderableCards = document.querySelectorAll('.card.orderable');
+      const sections = document.querySelectorAll('.section');
+      
+      // Enhanced touch/hover for cards
+      orderableCards.forEach(card => {
+        const icon = card.querySelector('.icon');
+        
+        // Mouse events (desktop)
+        card.addEventListener('mouseenter', () => {
+          if (typeof Motion !== 'undefined' && Motion.animate && icon) {
+            animate(icon, 
+              { scale: [1, 1.1], rotate: [0, 5] },
+              { duration: 0.3 }
+            );
+          }
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          if (typeof Motion !== 'undefined' && Motion.animate && icon) {
+            animate(icon, 
+              { scale: [1.1, 1], rotate: [5, 0] },
+              { duration: 0.3 }
+            );
+          }
+        });
+
+        // Touch events (mobile)
+        card.addEventListener('touchstart', (e) => {
+          card.classList.add('touch-active');
+          if (typeof Motion !== 'undefined' && Motion.animate && icon) {
+            animate(icon, 
+              { scale: [1, 1.1], rotate: [0, 5] },
+              { duration: 0.3 }
+            );
+          }
+        });
+
+        card.addEventListener('touchend', () => {
+          setTimeout(() => {
+            card.classList.remove('touch-active');
+            if (typeof Motion !== 'undefined' && Motion.animate && icon) {
+              animate(icon, 
+                { scale: [1.1, 1], rotate: [5, 0] },
+                { duration: 0.3 }
+              );
+            }
+          }, 150); // Brief delay for visual feedback
+        });
+
+        card.addEventListener('touchcancel', () => {
+          card.classList.remove('touch-active');
+          if (typeof Motion !== 'undefined' && Motion.animate && icon) {
+            animate(icon, 
+              { scale: [1.1, 1], rotate: [5, 0] },
+              { duration: 0.3 }
+            );
+          }
+        });
+      });
+
+      // Section touch animations
+      sections.forEach(section => {
+        section.addEventListener('touchstart', () => {
+          section.classList.add('touch-active');
+        });
+
+        section.addEventListener('touchend', () => {
+          setTimeout(() => {
+            section.classList.remove('touch-active');
+          }, 200);
+        });
+
+        section.addEventListener('touchcancel', () => {
+          section.classList.remove('touch-active');
+        });
+      });
+
+      // Button press animations
+      const buttons = document.querySelectorAll('.qty button, .button');
+      buttons.forEach(button => {
+        // Click animation (both mouse and touch)
+        button.addEventListener('click', () => {
+          if (typeof Motion !== 'undefined' && Motion.animate) {
+            animate(button, 
+              { scale: [1, 0.9, 1.1, 1] },
+              { duration: 0.4, ease: [0.68, -0.55, 0.265, 1.55] }
+            );
+          }
+        });
+
+        // Enhanced touch feedback
+        button.addEventListener('touchstart', (e) => {
+          e.preventDefault(); // Prevent double-tap zoom
+          button.style.transform = 'scale(0.95)';
+          button.style.transition = 'transform 0.1s ease';
+        });
+
+        button.addEventListener('touchend', () => {
+          button.style.transform = 'scale(1)';
+          setTimeout(() => {
+            button.style.transition = '';
+          }, 100);
+        });
+
+        button.addEventListener('touchcancel', () => {
+          button.style.transform = 'scale(1)';
+          button.style.transition = '';
+        });
+      });
+    }
+
+    // Initialize everything when DOM loads
+    document.addEventListener('DOMContentLoaded', () => {
+      initPageAnimations();
+      setupInteractionAnimations();
+    });
+
+    // === ORIGINAL FORM FUNCTIONALITY PRESERVED ===
     const counts = {};
     const cards = document.querySelectorAll('.card.orderable');
     cards.forEach(card => {
