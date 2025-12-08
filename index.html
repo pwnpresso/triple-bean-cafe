@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Triple Bean Cafe · Menu</title>
   <meta name="description" content="House beverage menu for Triple Bean Cafe." />
+  <meta name="theme-color" content="#5b4636" />
   <link rel="icon" href="images/favicon.svg">
   <link rel="preload" href="images/logo.svg" as="image" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -25,8 +26,10 @@
     </header>
 
     <main class="menu" aria-label="Menu">
-      <h2>Beverages</h2>
-      <p class="note">Ice available upon request • No decaf</p>
+      <div class="menu-header">
+        <h2>Beverages</h2>
+        <p class="note">Ice available upon request • No decaf</p>
+      </div>
       <div class="divider" role="separator" aria-hidden="true"></div>
 
       <div class="sections" id="menuSections">
@@ -109,12 +112,16 @@
       <div class="divider" role="separator" aria-hidden="true"></div>
 
       <div class="footer-bar">
-        <input id="guestName" class="input" placeholder="Your name (optional)">
-        <input id="note" class="input" placeholder="Note (optional): e.g., less ice / oat milk">
-        <button id="sendBtn" class="button">Send Order</button>
-        <div id="closedMsg" class="closed" style="display:none;">Ordering is currently closed.</div>
+        <div class="order-inputs">
+          <input id="guestName" class="input" placeholder="Your name (optional)" autocomplete="name">
+          <input id="note" class="input" placeholder="Note (optional): e.g., less ice / oat milk">
+        </div>
+        <div class="order-actions">
+          <button id="sendBtn" class="button primary" type="button">Send Order</button>
+          <div id="closedMsg" class="closed" style="display:none;" role="alert">Ordering is currently closed.</div>
+        </div>
       </div>
-      <div id="status" class="status"></div>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
 
       <footer>© <span id="year"></span> Triple Bean Cafe · Handmade at home</footer>
     </main>
