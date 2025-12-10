@@ -690,6 +690,7 @@ ul.menu-list {
   margin-top: clamp(8px, 2vw, 12px);
   min-height: 1.2em;
   font-weight: 500;
+  text-align: center;
 }
 
 .closed {
