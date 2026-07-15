@@ -10,6 +10,7 @@
   <link rel="preload" href="images/logo.svg" as="image" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/framer-motion@10/dist/framer-motion.js"></script>
+  <script src="menu.js"></script>
 </head>
 <body class="loading">
 
@@ -41,82 +42,7 @@
       </div>
       <div class="divider animate-divider" role="separator" aria-hidden="true" id="divider1"></div>
 
-      <div class="sections" id="menuSections">
-        <!-- Coffee -->
-        <section class="section" aria-labelledby="coffee-title">
-          <h3 id="coffee-title">Coffee</h3>
-          <ul class="menu-list">
-            <li class="card orderable" data-item="Iced Black">
-              <div class="icon" data-badge="❄️"><img src="images/iced-black.svg" alt="" width="32" height="32"></div>
-              <div><div class="name">Iced Black</div><div class="meta">Tap to add</div></div>
-              <div class="qty" data-qty="Iced Black"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
-            </li>
-            <li class="card orderable" data-item="Hot Black">
-              <div class="icon" data-badge="🔥"><img src="images/hot-black.svg" alt="" width="32" height="32"></div>
-              <div><div class="name">Hot Black</div><div class="meta">Tap to add</div></div>
-              <div class="qty" data-qty="Hot Black"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
-            </li>
-            <li class="card orderable" data-item="Iced White">
-              <div class="icon" data-badge="❄️"><img src="images/iced-white.svg" alt="" width="32" height="32"></div>
-              <div><div class="name">Iced White</div><div class="meta">Tap to add</div></div>
-              <div class="qty" data-qty="Iced White"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
-            </li>
-            <li class="card orderable" data-item="Hot White">
-              <div class="icon" data-badge="🔥"><img src="images/hot-white.svg" alt="" width="32" height="32"></div>
-              <div><div class="name">Hot White</div><div class="meta">Tap to add</div></div>
-              <div class="qty" data-qty="Hot White"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
-            </li>
-            <li class="card orderable" data-item="Aerocano">
-              <div class="icon" data-badge="❄️"><img src="images/aerocano.svg" alt="" width="32" height="32"></div>
-              <div><div class="name">Aerocano</div><div class="meta">Aerated espresso on ice • Tap to add</div></div>
-              <div class="qty" data-qty="Aerocano"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
-            </li>
-            <li class="card orderable" data-item="Affogato">
-              <div class="icon" data-badge="❄️"><img src="images/affogato.svg" alt="" width="32" height="32"></div>
-              <div><div class="name">Affogato</div><div class="meta">Vanilla ice cream + double espresso • Tap to add</div></div>
-              <div class="qty" data-qty="Affogato"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
-            </li>
-          </ul>
-        </section>
-
-        <!-- Tea -->
-        <section class="section" aria-labelledby="tea-title">
-          <h3 id="tea-title">Tea</h3>
-          <ul class="menu-list">
-            <li class="card orderable" data-item="Iced Matcha Latte">
-              <div class="icon" data-badge="❄️"><img src="images/iced-matcha.svg" alt="" width="32" height="32"></div>
-              <div><div class="name">Iced Matcha Latte</div><div class="meta">Tap to add</div></div>
-              <div class="qty" data-qty="Iced Matcha Latte"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
-            </li>
-            <li class="card orderable" data-item="Hot Matcha Latte">
-              <div class="icon" data-badge="🔥"><img src="images/hot-matcha.svg" alt="" width="32" height="32"></div>
-              <div><div class="name">Hot Matcha Latte</div><div class="meta">Tap to add</div></div>
-              <div class="qty" data-qty="Hot Matcha Latte"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
-            </li>
-            <li class="card orderable" data-item="Iced Strawberry Matcha Latte">
-              <div class="icon" data-badge="❄️"><img src="images/strawberry-matcha.svg" alt="" width="32" height="32"></div>
-              <div><div class="name">Matcha Ichigo</div><div class="meta">Strawberry puree + matcha + milk • Tap to add</div></div>
-              <div class="qty" data-qty="Iced Strawberry Matcha Latte"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
-            </li>
-          </ul>
-        </section>
-
-        <!-- Misc -->
-        <section class="section" aria-labelledby="misc-title">
-          <h3 id="misc-title">Misc</h3>
-          <ul class="menu-list">
-            <li class="card">
-              <div class="icon"><img src="images/fridge.svg" alt="" width="32" height="32"></div>
-              <div><div class="name">Assorted Drinks in Fridge</div><div class="meta">Self-serve — help yourself from the fridge</div></div>
-            </li>
-            <li class="card orderable" data-item="Gin & Tonic">
-              <div class="icon" data-badge="❄️"><img src="images/gin-tonic.svg" alt="" width="32" height="32"></div>
-              <div><div class="name">Gin &amp; Tonic</div><div class="meta">Tap to add</div></div>
-              <div class="qty" data-qty="Gin & Tonic"><button type="button" data-action="dec">−</button><span class="count">0</span><button type="button" data-action="inc">+</button></div>
-            </li>
-          </ul>
-        </section>
-      </div>
+      <div class="sections" id="menuSections"></div>
 
       <div class="divider" role="separator" aria-hidden="true"></div>
 
@@ -138,6 +64,90 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Render the menu sections/cards from menu.js before anything else
+    // (animations, order handlers) queries .section/.card elements.
+    const CATEGORY_ORDER = ["Coffee", "Tea", "Misc"];
+    const TEMP_BADGES = { iced: "❄️", hot: "🔥" };
+
+    function buildCard(item) {
+      const li = document.createElement('li');
+      li.className = item.orderable ? 'card orderable' : 'card';
+      if (item.orderable) li.setAttribute('data-item', item.name);
+
+      const iconDiv = document.createElement('div');
+      iconDiv.className = 'icon';
+      const badge = TEMP_BADGES[item.defaultTemp];
+      if (badge) iconDiv.setAttribute('data-badge', badge);
+      const img = document.createElement('img');
+      img.src = item.icon;
+      img.alt = '';
+      img.width = 32;
+      img.height = 32;
+      iconDiv.appendChild(img);
+      li.appendChild(iconDiv);
+
+      const infoDiv = document.createElement('div');
+      const nameDiv = document.createElement('div');
+      nameDiv.className = 'name';
+      nameDiv.textContent = item.displayName || item.name;
+      const metaDiv = document.createElement('div');
+      metaDiv.className = 'meta';
+      metaDiv.textContent = item.orderable
+        ? (item.description ? `${item.description} • Tap to add` : 'Tap to add')
+        : (item.description || '');
+      infoDiv.appendChild(nameDiv);
+      infoDiv.appendChild(metaDiv);
+      li.appendChild(infoDiv);
+
+      if (item.orderable) {
+        const qtyDiv = document.createElement('div');
+        qtyDiv.className = 'qty';
+        qtyDiv.setAttribute('data-qty', item.name);
+        const decBtn = document.createElement('button');
+        decBtn.type = 'button';
+        decBtn.dataset.action = 'dec';
+        decBtn.textContent = '−';
+        const countSpan = document.createElement('span');
+        countSpan.className = 'count';
+        countSpan.textContent = '0';
+        const incBtn = document.createElement('button');
+        incBtn.type = 'button';
+        incBtn.dataset.action = 'inc';
+        incBtn.textContent = '+';
+        qtyDiv.appendChild(decBtn);
+        qtyDiv.appendChild(countSpan);
+        qtyDiv.appendChild(incBtn);
+        li.appendChild(qtyDiv);
+      }
+      return li;
+    }
+
+    function renderMenu() {
+      const container = document.getElementById('menuSections');
+      CATEGORY_ORDER.forEach(category => {
+        const items = MENU_ITEMS.filter(item => item.category === category);
+        if (items.length === 0) return;
+
+        const section = document.createElement('section');
+        section.className = 'section';
+        const slug = category.toLowerCase();
+        section.setAttribute('aria-labelledby', `${slug}-title`);
+
+        const h3 = document.createElement('h3');
+        h3.id = `${slug}-title`;
+        h3.textContent = category;
+        section.appendChild(h3);
+
+        const ul = document.createElement('ul');
+        ul.className = 'menu-list';
+        items.forEach(item => ul.appendChild(buildCard(item)));
+        section.appendChild(ul);
+
+        container.appendChild(section);
+      });
+    }
+    renderMenu();
 
     // >>> REPLACE with your current /exec URL (keep it exactly as in your working version)
     const ORDER_ENDPOINT = "https://script.google.com/macros/s/AKfycbykR7MxOkPuKtz7Sa92HJG9W1qOecMrydAf7LPQBYL2wpA1ULcj97WAfcBWZW29CdmJ/exec";
